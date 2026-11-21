@@ -19,59 +19,59 @@
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
 
-    combos {
-        compatible = "zmk,combos";
+    /* combos { */
+    /*     compatible = "zmk,combos"; */
+    /**/
+    /*     er_less { */
+    /*         bindings = <&kp ES_LT>; */
+    /*         key-positions = <2 3>; */
+    /*     }; */
+    /**/
+    /*     rt_greater { */
+    /*         bindings = <&kp ES_GT>; */
+    /*         key-positions = <3 4>; */
+    /*     }; */
+    /**/
+    /*     yu_plus { */
+    /*         bindings = <&kp ES_PLUS>; */
+    /*         key-positions = <5 6>; */
+    /*     }; */
+    /**/
+    /*     hj_minus { */
+    /*         bindings = <&kp ES_MINUS>; */
+    /*         key-positions = <15 16>; */
+    /*     }; */
+    /**/
+    /*     nm_asterisk { */
+    /*         bindings = <&kp ES_ASTERISK>; */
+    /*         key-positions = <25 26>; */
+    /*     }; */
+    /**/
+    /*     space_enter_base { */
+    /*         timeout-ms = <100>; */
+    /*         key-positions = <32 33>; */
+    /*         layers = <BASE_TD BASE_NORMAL>; */
+    /*         bindings = <&base_hold BASE_NORMAL 0>; */
+    /*     }; */
+    /* }; */
 
-        er_less {
-            bindings = <&kp ES_LT>;
-            key-positions = <2 3>;
-        };
-
-        rt_greater {
-            bindings = <&kp ES_GT>;
-            key-positions = <3 4>;
-        };
-
-        yu_plus {
-            bindings = <&kp ES_PLUS>;
-            key-positions = <5 6>;
-        };
-
-        hj_minus {
-            bindings = <&kp ES_MINUS>;
-            key-positions = <15 16>;
-        };
-
-        nm_asterisk {
-            bindings = <&kp ES_ASTERISK>;
-            key-positions = <25 26>;
-        };
-
-        space_enter_base {
-            timeout-ms = <100>;
-            key-positions = <32 33>;
-            layers = <BASE_TD BASE_NORMAL>;
-            bindings = <&base_hold BASE_NORMAL 0>;
-        };
-    };
-
-    behaviors {
-        td_lshft_caps: td_lshft_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LSHFT_CAPS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHFT>, <&kp CAPS>;
-        };
-
-        base_hold: base_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <2000>;
-            bindings = <&tog>, <&none>;
-        };
-    };
+    /* behaviors { */
+    /*     td_lshft_caps: td_lshft_caps { */
+    /*         compatible = "zmk,behavior-tap-dance"; */
+    /*         label = "TD_LSHFT_CAPS"; */
+    /*         #binding-cells = <0>; */
+    /*         tapping-term-ms = <200>; */
+    /*         bindings = <&kp LSHFT>, <&kp CAPS>; */
+    /*     }; */
+    /**/
+    /*     base_hold: base_hold { */
+    /*         compatible = "zmk,behavior-hold-tap"; */
+    /*         #binding-cells = <2>; */
+    /*         flavor = "tap-preferred"; */
+    /*         tapping-term-ms = <2000>; */
+    /*         bindings = <&tog>, <&none>; */
+    /*     }; */
+    /* }; */
 
     keymap {
         compatible = "zmk,keymap";
@@ -81,8 +81,8 @@
             bindings = <
     &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P
     &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G  &kp H  &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI ES_N_TILDE
-    &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp ES_MINUS
-                   &mt &mo MEDIA ESC  &mt &mo NAV SPACE  &mt &mo MOUSE TAB        &mt &mo SYM RET  &mt &mo NUM DEL  &kp BSPC
+    &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp ES_COMMA  &kp ES_DOT  &kp ES_MINUS
+                   &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM RET  &lt NUM DEL  &lt FUN BSPC
             >;
         };
 
@@ -90,51 +90,51 @@
           display-name = "Nav";
           bindings = <
     &none  &none  &none  &none  &none  &kp C_AC_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT &none  &kp LEFT  &kp DOWN  &kp UP  &kp DOWN  &kp CAPS
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp CAPS
     &none  &none  &none  &none  &none  &kp INS  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                   &none  &mo NAV   &none         &kp RET  &kp DEL  &kp BSPC
+                   &none  &trans   &none         &kp RET  &kp DEL  &kp BSPC
           >;
-        }
+        };
 
         mouse {
           display-name = "Mouse";
           bindings = <
     &none  &none  &none  &none  &none  &kp C_AC_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT &none  &kp LEFT  &kp DOWN  &kp UP  &kp DOWN  &none
-    &none  &none  &none  &none  &none  &kp MOVE_LEFT  &kp MOVE_DOWN  &kp MOVE_UP  &kp MOVE_RIGHT  &none
-                   &none  &none  &mo MOUSE         &kp RET  &kp DEL  &kp BSPC
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none
+    &none  &none  &none  &none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+                   &none  &none  &trans          &kp RET  &kp DEL  &kp BSPC
           >;
-        }
+        };
 
         media {
           display-name = "Media";
           bindings = <
-    &none  &none  &none  &none  &none  &none  &none   &none   &kp EP_OFF  &kp EP_ON
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT &none  &kp EP_TOG  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
-    &none  &none  &none  &none  &none  &kp OUT_TOG  &kp MB1  &kp MB2  &kp MB3  &kp MB4
-                   &mo MEDIA  &none  &none          &kp C_STOP  &kp C_PP  &kp C_MUTE
+    &none  &none  &none  &none  &none  &none  &none   &none   &ext_power EP_OFF  &ext_power EP_ON
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT &none  &ext_power EP_TOG  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+    &none  &none  &none  &none  &none  &out OUT_TOG  &mkp MB1  &mkp MB2  &mkp MB3  &mkp MB4
+                   &trans  &none  &none          &kp C_STOP  &kp C_PP  &kp C_MUTE
           >;
-        }
+        };
 
         num {
           display-name = "Num";
           bindings = <
-    &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT  &none  &none  &none  &none  &none
-    &kp SEMI  &kp N4  &kp N5  &kp N6  &kp PLUS  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
-    &kp ES_TILDE  &kp N1  &kp N2  &kp N3  &kp BSLH  &none  &none  &none  &none  &none
-                   &kp ES_LESS_THAN  &kp N0  &kp ES_MINUS        &none  &mo NUM  &none
+    &kp ES_LBKT  &kp N7  &kp N8  &kp N9  &kp ES_RBKT  &none  &none  &none  &none  &none
+    &kp ES_SEMI  &kp N4  &kp N5  &kp N6  &kp ES_PLUS  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+    &kp ES_TILDE  &kp N1  &kp N2  &kp N3  &kp ES_BSLH  &none  &none  &none  &none  &none
+                   &kp ES_LESS_THAN  &kp N0  &kp ES_MINUS        &none  &trans  &none
           >;
-        }
+        };
 
         sym {
           display-name = "Sym";
           bindings = <
-    &kp ES_LBRC  &kp AMPS  &kp STAR  &kp N9  &kp RBRC  &none  &none  &none  &none  &none
-    &kp ES_COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
-    &kp ES_TILDE  &kp EXCL  &kp AT  &kp HASH  &kp BSLH  &none  &none  &none  &none  &none
-                   &kp ES_LPAR  &kp ES_RPAR  &kp ES_UNDERSCORE        &mo SYM  &none  &none
+    &kp ES_LBRC  &kp ES_AMPS  &kp ES_STAR  &kp N9  &kp ES_RBRC  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &none  &none
+    &kp ES_COLON  &kp ES_DLLR  &kp ES_PRCNT  &kp ES_CARET  &kp ES_PLUS  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+    &kp ES_TILDE  &kp ES_EXCL  &kp ES_AT  &kp ES_HASH  &kp ES_BSLH  &none  &none  &none  &none  &none
+                   &kp ES_LPAR  &kp ES_RPAR  &kp ES_UNDERSCORE        &trans  &none  &none
           >;
-        }
+        };
 
         fun {
           display-name = "Fun";
@@ -142,9 +142,9 @@
     &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN  &none  &none  &none  &none  &none
     &kp F11  &kp F4  &kp F5  &kp F6  &kp SLCK  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
     &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK  &none  &none  &none  &none  &none
-                   &none  &kp SPACE  &kp TAB        &none  &none  &mo FUN
+                   &none  &kp SPACE  &kp TAB        &none  &none  &trans
           >;
-        }
+        };
 
     /*     // 1: Base con Shift normal. */
     /*     normal_base_layer { */
