@@ -105,6 +105,17 @@
         display-name = "hold_tap_l";
         retro-tap;
       };
+
+      html: hold_tap_mod_layer {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        quick-tap-ms= <200>;
+        bindings = <&mo>, <&kp>;
+        display-name = "hold_tap_mod_layer";
+        retro-tap;
+      };
     };
 
     keymap {
