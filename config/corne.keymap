@@ -93,7 +93,7 @@
         bindings = <&kp>, <&kp>;
         display-name = "hold_tap_gui";
         retro-tap;
-      }
+      };
 
       htl: hold_tap_l {
         compatible = "zmk,behavior-hold-tap";
@@ -104,8 +104,8 @@
         bindings = <&kp>, <&kp>;
         display-name = "hold_tap_l";
         retro-tap;
-      }
-    }
+      };
+    };
 
     keymap {
         compatible = "zmk,keymap";
