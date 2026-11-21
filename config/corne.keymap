@@ -72,6 +72,40 @@
     /*         bindings = <&tog>, <&none>; */
     /*     }; */
     /* }; */
+    behaviors {
+      ht: hold_tap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms= <200>;
+        bindings = <&kp>, <&kp>;
+        display-name = "hold_tap";
+        retro-tap;
+      };
+
+      ht_gui: hold_tap_gui {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <180>;
+        quick-tap-ms= <200>;
+        bindings = <&kp>, <&kp>;
+        display-name = "hold_tap_gui";
+        retro-tap;
+      }
+
+      htl: hold_tap_l {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        quick-tap-ms= <200>;
+        bindings = <&kp>, <&kp>;
+        display-name = "hold_tap_l";
+        retro-tap;
+      }
+    }
 
     keymap {
         compatible = "zmk,keymap";
@@ -80,9 +114,9 @@
             display-name = "Base";
             bindings = <
     &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P
-    &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G  &kp H  &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI ES_N_TILDE
+    &ht_gui LGUI A  &ht LALT S  &ht LCTRL D  &htl LSHFT F  &kp G  &kp H  &htl RSHFT J  &ht RCTRL K  &ht RALT L  &ht_gui RGUI ES_N_TILDE
     &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp ES_COMMA  &kp ES_DOT  &kp ES_MINUS
-                   &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM RET  &lt NUM DEL  &lt FUN BSPC
+                   &ht MEDIA ESC  &ht NAV SPACE  &ht MOUSE TAB        &ht SYM RET  &ht NUM DEL  &ht FUN BSPC
             >;
         };
 
@@ -120,7 +154,7 @@
           display-name = "Num";
           bindings = <
     &kp ES_LBKT  &kp N7  &kp N8  &kp N9  &kp ES_RBKT  &none  &none  &none  &none  &none
-    &kp ES_SEMI  &kp N4  &kp N5  &kp N6  &kp ES_PLUS  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+    &kp ES_SEMI  &kp N4  &kp N5  &kp N6  &kp ES_EQUAL  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
     &kp ES_TILDE  &kp N1  &kp N2  &kp N3  &kp ES_BSLH  &none  &none  &none  &none  &none
                    &kp ES_LESS_THAN  &kp N0  &kp ES_MINUS        &none  &trans  &none
           >;
@@ -129,7 +163,7 @@
         sym {
           display-name = "Sym";
           bindings = <
-    &kp ES_LBRC  &kp ES_AMPS  &kp ES_STAR  &kp N9  &kp ES_RBRC  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &none  &none
+    &kp ES_LBRC  &kp ES_AMPS  &kp ES_STAR  &kp ES_QUESTION  &kp ES_RBRC  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &none  &none
     &kp ES_COLON  &kp ES_DLLR  &kp ES_PRCNT  &kp ES_CARET  &kp ES_PLUS  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
     &kp ES_TILDE  &kp ES_EXCL  &kp ES_AT  &kp ES_HASH  &kp ES_BSLH  &none  &none  &none  &none  &none
                    &kp ES_LPAR  &kp ES_RPAR  &kp ES_UNDERSCORE        &trans  &none  &none
