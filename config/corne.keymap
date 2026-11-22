@@ -110,7 +110,7 @@
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <150>;
+        tapping-term-ms = <200>;
         quick-tap-ms= <200>;
         bindings = <&mo>, <&kp>;
         display-name = "hold_tap_mod_layer";
@@ -127,7 +127,7 @@
     &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P
     &ht_gui LGUI A  &ht LALT S  &ht LCTRL D  &htl LSHFT F  &kp G  &kp H  &htl RSHFT J  &ht RCTRL K  &ht RALT L  &ht_gui RGUI ES_N_TILDE
     &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp ES_COMMA  &kp ES_DOT  &kp ES_MINUS
-                   &ht MEDIA ESC  &ht NAV SPACE  &ht MOUSE TAB        &ht SYM RET  &ht NUM DEL  &ht FUN BSPC
+                   &html MEDIA ESC  &html NAV SPACE  &html MOUSE TAB        &html SYM RET  &html NUM DEL  &html FUN BSPC
             >;
         };
 
